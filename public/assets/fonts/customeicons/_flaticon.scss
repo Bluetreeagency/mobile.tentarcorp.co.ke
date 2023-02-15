@@ -1,0 +1,298 @@
+    /*
+    Flaticon icon font: Flaticon
+    Creation date: 14/11/2019 20:54
+    */
+
+    @font-face {
+  font-family: "Flaticon";
+  src: url("./Flaticon.eot");
+  src: url("./Flaticon.eot?#iefix") format("embedded-opentype"),
+       url("./Flaticon.woff2") format("woff2"),
+       url("./Flaticon.woff") format("woff"),
+       url("./Flaticon.ttf") format("truetype"),
+       url("./Flaticon.svg#Flaticon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: "Flaticon";
+    src: url("./Flaticon.svg#Flaticon") format("svg");
+  }
+}
+
+    .fi:before{
+        display: inline-block;
+  font-family: "Flaticon";
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  line-height: 1;
+  text-decoration: inherit;
+  text-rendering: optimizeLegibility;
+  text-transform: none;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+    }
+
+    .flaticon-building:before { content: "\f100"; }
+.flaticon-delete:before { content: "\f101"; }
+.flaticon-bill:before { content: "\f102"; }
+.flaticon-approve-invoice:before { content: "\f103"; }
+.flaticon-invoice-1:before { content: "\f104"; }
+.flaticon-receipt:before { content: "\f105"; }
+.flaticon-invoice-2:before { content: "\f106"; }
+.flaticon-receipt-1:before { content: "\f107"; }
+.flaticon-bill-3:before { content: "\f108"; }
+.flaticon-bill-2:before { content: "\f109"; }
+.flaticon-bill-1:before { content: "\f10a"; }
+.flaticon-cash-register:before { content: "\f10b"; }
+.flaticon-maintenance:before { content: "\f10c"; }
+.flaticon-credit-card:before { content: "\f10d"; }
+.flaticon-mobile:before { content: "\f10e"; }
+.flaticon-cvv:before { content: "\f10f"; }
+.flaticon-service:before { content: "\f110"; }
+.flaticon-payment-method:before { content: "\f111"; }
+.flaticon-rent:before { content: "\f112"; }
+.flaticon-cash-register-1:before { content: "\f113"; }
+.flaticon-network:before { content: "\f114"; }
+.flaticon-customer:before { content: "\f115"; }
+.flaticon-bot:before { content: "\f116"; }
+.flaticon-add-user:before { content: "\f117"; }
+.flaticon-user:before { content: "\f118"; }
+.flaticon-recovered:before { content: "\f119"; }
+.flaticon-king:before { content: "\f11a"; }
+.flaticon-proposal:before { content: "\f11b"; }
+.flaticon-corporate:before { content: "\f11c"; }
+.flaticon-conversation:before { content: "\f11d"; }
+.flaticon-heart:before { content: "\f11e"; }
+.flaticon-insured:before { content: "\f11f"; }
+.flaticon-webpage:before { content: "\f120"; }
+.flaticon-mind:before { content: "\f121"; }
+.flaticon-car:before { content: "\f122"; }
+.flaticon-enterprise:before { content: "\f123"; }
+.flaticon-task-list:before { content: "\f124"; }
+.flaticon-clipboard:before { content: "\f125"; }
+.flaticon-clipboard-1:before { content: "\f126"; }
+.flaticon-checklist:before { content: "\f127"; }
+.flaticon-clipboard-2:before { content: "\f128"; }
+.flaticon-folder:before { content: "\f129"; }
+.flaticon-check-list:before { content: "\f12a"; }
+.flaticon-clipboard-3:before { content: "\f12b"; }
+.flaticon-clipboard-4:before { content: "\f12c"; }
+.flaticon-notepad:before { content: "\f12d"; }
+.flaticon-date:before { content: "\f12e"; }
+.flaticon-calendar:before { content: "\f12f"; }
+.flaticon-calendar-1:before { content: "\f130"; }
+.flaticon-birthday:before { content: "\f131"; }
+.flaticon-flight:before { content: "\f132"; }
+.flaticon-calendar-2:before { content: "\f133"; }
+.flaticon-calendar-3:before { content: "\f134"; }
+.flaticon-wedding-date:before { content: "\f135"; }
+.flaticon-birthday-1:before { content: "\f136"; }
+.flaticon-appointment:before { content: "\f137"; }
+.flaticon-birthday-2:before { content: "\f138"; }
+.flaticon-event:before { content: "\f139"; }
+.flaticon-calendar-4:before { content: "\f13a"; }
+.flaticon-calendar-5:before { content: "\f13b"; }
+.flaticon-calendar-6:before { content: "\f13c"; }
+.flaticon-calendar-7:before { content: "\f13d"; }
+.flaticon-marketing:before { content: "\f13e"; }
+.flaticon-birthday-3:before { content: "\f13f"; }
+.flaticon-rocket:before { content: "\f140"; }
+.flaticon-presentation:before { content: "\f141"; }
+.flaticon-project:before { content: "\f142"; }
+.flaticon-focus:before { content: "\f143"; }
+.flaticon-advertising:before { content: "\f144"; }
+.flaticon-network-1:before { content: "\f145"; }
+.flaticon-folder-1:before { content: "\f146"; }
+.flaticon-advertising-1:before { content: "\f147"; }
+.flaticon-document:before { content: "\f148"; }
+.flaticon-folder-2:before { content: "\f149"; }
+.flaticon-folder-3:before { content: "\f14a"; }
+.flaticon-ai:before { content: "\f14b"; }
+.flaticon-customer-service:before { content: "\f14c"; }
+.flaticon-call:before { content: "\f14d"; }
+.flaticon-24-hours:before { content: "\f14e"; }
+.flaticon-telephone:before { content: "\f14f"; }
+.flaticon-budget:before { content: "\f150"; }
+.flaticon-report:before { content: "\f151"; }
+.flaticon-folder-4:before { content: "\f152"; }
+.flaticon-folder-5:before { content: "\f153"; }
+.flaticon-report-1:before { content: "\f154"; }
+.flaticon-idea:before { content: "\f155"; }
+.flaticon-beach-umbrella:before { content: "\f156"; }
+.flaticon-beach-umbrella-1:before { content: "\f157"; }
+.flaticon-mail:before { content: "\f158"; }
+.flaticon-mail-1:before { content: "\f159"; }
+.flaticon-mail-2:before { content: "\f15a"; }
+.flaticon-mail-3:before { content: "\f15b"; }
+.flaticon-server:before { content: "\f15c"; }
+.flaticon-bill-4:before { content: "\f15d"; }
+.flaticon-bill-5:before { content: "\f15e"; }
+.flaticon-card:before { content: "\f15f"; }
+.flaticon-bill-6:before { content: "\f160"; }
+.flaticon-invoice-3:before { content: "\f161"; }
+.flaticon-cash-register-2:before { content: "\f162"; }
+.flaticon-bill-7:before { content: "\f163"; }
+.flaticon-bill-8:before { content: "\f164"; }
+.flaticon-organization-chart:before { content: "\f165"; }
+.flaticon-diagram:before { content: "\f166"; }
+.flaticon-hierarchy:before { content: "\f167"; }
+.flaticon-organization:before { content: "\f168"; }
+.flaticon-structure:before { content: "\f169"; }
+.flaticon-recycle:before { content: "\f16a"; }
+.flaticon-recycle-1:before { content: "\f16b"; }
+.flaticon-delete-1:before { content: "\f16c"; }
+.flaticon-pen:before { content: "\f16d"; }
+.flaticon-view:before { content: "\f16e"; }
+.flaticon-agreement:before { content: "\f16f"; }
+.flaticon-edit-file:before { content: "\f170"; }
+.flaticon-hand:before { content: "\f171"; }
+.flaticon-science:before { content: "\f172"; }
+.flaticon-intelligence:before { content: "\f173"; }
+.flaticon-business-and-finance:before { content: "\f174"; }
+.flaticon-screwdriver:before { content: "\f175"; }
+.flaticon-gear:before { content: "\f176"; }
+.flaticon-settings:before { content: "\f177"; }
+.flaticon-sales:before { content: "\f178"; }
+.flaticon-profit:before { content: "\f179"; }
+.flaticon-bar-chart:before { content: "\f17a"; }
+.flaticon-financial:before { content: "\f17b"; }
+.flaticon-product:before { content: "\f17c"; }
+.flaticon-mail-4:before { content: "\f17d"; }
+.flaticon-report-2:before { content: "\f17e"; }
+.flaticon-bar:before { content: "\f17f"; }
+.flaticon-presentation-1:before { content: "\f180"; }
+    
+    $font-Flaticon-building: "\f100";
+    $font-Flaticon-delete: "\f101";
+    $font-Flaticon-bill: "\f102";
+    $font-Flaticon-approve-invoice: "\f103";
+    $font-Flaticon-invoice-1: "\f104";
+    $font-Flaticon-receipt: "\f105";
+    $font-Flaticon-invoice-2: "\f106";
+    $font-Flaticon-receipt-1: "\f107";
+    $font-Flaticon-bill-3: "\f108";
+    $font-Flaticon-bill-2: "\f109";
+    $font-Flaticon-bill-1: "\f10a";
+    $font-Flaticon-cash-register: "\f10b";
+    $font-Flaticon-maintenance: "\f10c";
+    $font-Flaticon-credit-card: "\f10d";
+    $font-Flaticon-mobile: "\f10e";
+    $font-Flaticon-cvv: "\f10f";
+    $font-Flaticon-service: "\f110";
+    $font-Flaticon-payment-method: "\f111";
+    $font-Flaticon-rent: "\f112";
+    $font-Flaticon-cash-register-1: "\f113";
+    $font-Flaticon-network: "\f114";
+    $font-Flaticon-customer: "\f115";
+    $font-Flaticon-bot: "\f116";
+    $font-Flaticon-add-user: "\f117";
+    $font-Flaticon-user: "\f118";
+    $font-Flaticon-recovered: "\f119";
+    $font-Flaticon-king: "\f11a";
+    $font-Flaticon-proposal: "\f11b";
+    $font-Flaticon-corporate: "\f11c";
+    $font-Flaticon-conversation: "\f11d";
+    $font-Flaticon-heart: "\f11e";
+    $font-Flaticon-insured: "\f11f";
+    $font-Flaticon-webpage: "\f120";
+    $font-Flaticon-mind: "\f121";
+    $font-Flaticon-car: "\f122";
+    $font-Flaticon-enterprise: "\f123";
+    $font-Flaticon-task-list: "\f124";
+    $font-Flaticon-clipboard: "\f125";
+    $font-Flaticon-clipboard-1: "\f126";
+    $font-Flaticon-checklist: "\f127";
+    $font-Flaticon-clipboard-2: "\f128";
+    $font-Flaticon-folder: "\f129";
+    $font-Flaticon-check-list: "\f12a";
+    $font-Flaticon-clipboard-3: "\f12b";
+    $font-Flaticon-clipboard-4: "\f12c";
+    $font-Flaticon-notepad: "\f12d";
+    $font-Flaticon-date: "\f12e";
+    $font-Flaticon-calendar: "\f12f";
+    $font-Flaticon-calendar-1: "\f130";
+    $font-Flaticon-birthday: "\f131";
+    $font-Flaticon-flight: "\f132";
+    $font-Flaticon-calendar-2: "\f133";
+    $font-Flaticon-calendar-3: "\f134";
+    $font-Flaticon-wedding-date: "\f135";
+    $font-Flaticon-birthday-1: "\f136";
+    $font-Flaticon-appointment: "\f137";
+    $font-Flaticon-birthday-2: "\f138";
+    $font-Flaticon-event: "\f139";
+    $font-Flaticon-calendar-4: "\f13a";
+    $font-Flaticon-calendar-5: "\f13b";
+    $font-Flaticon-calendar-6: "\f13c";
+    $font-Flaticon-calendar-7: "\f13d";
+    $font-Flaticon-marketing: "\f13e";
+    $font-Flaticon-birthday-3: "\f13f";
+    $font-Flaticon-rocket: "\f140";
+    $font-Flaticon-presentation: "\f141";
+    $font-Flaticon-project: "\f142";
+    $font-Flaticon-focus: "\f143";
+    $font-Flaticon-advertising: "\f144";
+    $font-Flaticon-network-1: "\f145";
+    $font-Flaticon-folder-1: "\f146";
+    $font-Flaticon-advertising-1: "\f147";
+    $font-Flaticon-document: "\f148";
+    $font-Flaticon-folder-2: "\f149";
+    $font-Flaticon-folder-3: "\f14a";
+    $font-Flaticon-ai: "\f14b";
+    $font-Flaticon-customer-service: "\f14c";
+    $font-Flaticon-call: "\f14d";
+    $font-Flaticon-24-hours: "\f14e";
+    $font-Flaticon-telephone: "\f14f";
+    $font-Flaticon-budget: "\f150";
+    $font-Flaticon-report: "\f151";
+    $font-Flaticon-folder-4: "\f152";
+    $font-Flaticon-folder-5: "\f153";
+    $font-Flaticon-report-1: "\f154";
+    $font-Flaticon-idea: "\f155";
+    $font-Flaticon-beach-umbrella: "\f156";
+    $font-Flaticon-beach-umbrella-1: "\f157";
+    $font-Flaticon-mail: "\f158";
+    $font-Flaticon-mail-1: "\f159";
+    $font-Flaticon-mail-2: "\f15a";
+    $font-Flaticon-mail-3: "\f15b";
+    $font-Flaticon-server: "\f15c";
+    $font-Flaticon-bill-4: "\f15d";
+    $font-Flaticon-bill-5: "\f15e";
+    $font-Flaticon-card: "\f15f";
+    $font-Flaticon-bill-6: "\f160";
+    $font-Flaticon-invoice-3: "\f161";
+    $font-Flaticon-cash-register-2: "\f162";
+    $font-Flaticon-bill-7: "\f163";
+    $font-Flaticon-bill-8: "\f164";
+    $font-Flaticon-organization-chart: "\f165";
+    $font-Flaticon-diagram: "\f166";
+    $font-Flaticon-hierarchy: "\f167";
+    $font-Flaticon-organization: "\f168";
+    $font-Flaticon-structure: "\f169";
+    $font-Flaticon-recycle: "\f16a";
+    $font-Flaticon-recycle-1: "\f16b";
+    $font-Flaticon-delete-1: "\f16c";
+    $font-Flaticon-pen: "\f16d";
+    $font-Flaticon-view: "\f16e";
+    $font-Flaticon-agreement: "\f16f";
+    $font-Flaticon-edit-file: "\f170";
+    $font-Flaticon-hand: "\f171";
+    $font-Flaticon-science: "\f172";
+    $font-Flaticon-intelligence: "\f173";
+    $font-Flaticon-business-and-finance: "\f174";
+    $font-Flaticon-screwdriver: "\f175";
+    $font-Flaticon-gear: "\f176";
+    $font-Flaticon-settings: "\f177";
+    $font-Flaticon-sales: "\f178";
+    $font-Flaticon-profit: "\f179";
+    $font-Flaticon-bar-chart: "\f17a";
+    $font-Flaticon-financial: "\f17b";
+    $font-Flaticon-product: "\f17c";
+    $font-Flaticon-mail-4: "\f17d";
+    $font-Flaticon-report-2: "\f17e";
+    $font-Flaticon-bar: "\f17f";
+    $font-Flaticon-presentation-1: "\f180";

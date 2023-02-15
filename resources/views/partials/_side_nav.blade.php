@@ -1,49 +1,184 @@
-  <!-- Offcanvas -->
-  <div class="offcanvas offcanvas-start" id="affanOffcanvas" data-bs-scroll="true" tabindex="-1" aria-labelledby="affanOffcanvsLabel">
-   <button class="btn-close btn-close-white text-reset" type="button" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-   <div class="offcanvas-body p-0">
-     <!-- Side Nav Wrapper -->
-     <div class="sidenav-wrapper">
-       <!-- Sidenav Profile -->
-       <div class="sidenav-profile bg-gradient">
-         <div class="sidenav-style1"></div>
-         <!-- User Thumbnail -->
-         <div class="user-profile"><img src="img/bg-img/2.jpg" alt=""></div>
-         <!-- User Info -->
-         <div class="user-info">
-           <h6 class="user-name mb-0">Affan Islam</h6><span>CEO, Designing World</span>
-         </div>
-       </div>
-       <!-- Sidenav Nav -->
-       <ul class="sidenav-nav ps-0">
-         <li><a href="page-home.html"><i class="bi bi-house-door"></i>Home</a></li>
-         <li><a href="elements.html"><i class="bi bi-folder2-open"></i>Elements<span class="badge bg-danger rounded-pill ms-2">220+</span></a></li>
-         <li><a href="pages.html"><i class="bi bi-collection"></i>Pages<span class="badge bg-success rounded-pill ms-2">100+</span></a></li>
-         <li><a href="#"><i class="bi bi-cart-check"></i>Shop</a>
-           <ul>
-             <li><a href="page-shop-grid.html">Shop Grid</a></li>
-             <li><a href="page-shop-list.html">Shop List</a></li>
-             <li><a href="page-shop-details.html">Shop Details</a></li>
-             <li><a href="page-cart.html">Cart</a></li>
-             <li><a href="page-checkout.html">Checkout</a></li>
-           </ul>
-         </li>
-         <li><a href="settings.html"><i class="bi bi-gear"></i>Settings</a></li>
-         <li>
-           <div class="night-mode-nav"><i class="bi bi-moon"></i>Night Mode
-             <div class="form-check form-switch">
-               <input class="form-check-input form-check-success" id="darkSwitch" type="checkbox">
-             </div>
+ <!-- App Sidebar -->
+ <div class="modal fade panelbox panelbox-left" id="sidebarPanel" tabindex="-1" role="dialog">
+   <div class="modal-dialog" role="document">
+       <div class="modal-content">
+           <div class="modal-body p-0">
+               <!-- profile box -->
+               <div class="profileBox pt-2 pb-2">
+                   <div class="image-wrapper">
+                       <img src="assets/img/sample/avatar/avatar1.jpg" alt="image" class="imaged  w36">
+                   </div>
+                   <div class="in">
+                       <strong>Sebastian Doe</strong>
+                       <div class="text-muted">4029209</div>
+                   </div>
+                   <a href="#" class="btn btn-link btn-icon sidebar-close" data-bs-dismiss="modal">
+                       <ion-icon name="close-outline"></ion-icon>
+                   </a>
+               </div>
+               <!-- * profile box -->
+               <!-- balance -->
+               <div class="sidebar-balance">
+                   <div class="listview-title">Balance</div>
+                   <div class="in">
+                       <h1 class="amount">$ 2,562.50</h1>
+                   </div>
+               </div>
+               <!-- * balance -->
+
+               <!-- action group -->
+               <div class="action-group">
+                   <a href="index-2.html" class="action-button">
+                       <div class="in">
+                           <div class="iconbox">
+                               <ion-icon name="add-outline"></ion-icon>
+                           </div>
+                           Deposit
+                       </div>
+                   </a>
+                   <a href="index-2.html" class="action-button">
+                       <div class="in">
+                           <div class="iconbox">
+                               <ion-icon name="arrow-down-outline"></ion-icon>
+                           </div>
+                           Withdraw
+                       </div>
+                   </a>
+                   <a href="index-2.html" class="action-button">
+                       <div class="in">
+                           <div class="iconbox">
+                               <ion-icon name="arrow-forward-outline"></ion-icon>
+                           </div>
+                           Send
+                       </div>
+                   </a>
+                   <a href="app-cards.html" class="action-button">
+                       <div class="in">
+                           <div class="iconbox">
+                               <ion-icon name="card-outline"></ion-icon>
+                           </div>
+                           My Cards
+                       </div>
+                   </a>
+               </div>
+               <!-- * action group -->
+
+               <!-- menu -->
+               <div class="listview-title mt-1">Menu</div>
+               <ul class="listview flush transparent no-line image-listview">
+                   <li>
+                       <a href="index-2.html" class="item">
+                           <div class="icon-box bg-primary">
+                               <ion-icon name="pie-chart-outline"></ion-icon>
+                           </div>
+                           <div class="in">
+                               Overview
+                               <span class="badge badge-primary">10</span>
+                           </div>
+                       </a>
+                   </li>
+                   <li>
+                       <a href="app-pages.html" class="item">
+                           <div class="icon-box bg-primary">
+                               <ion-icon name="document-text-outline"></ion-icon>
+                           </div>
+                           <div class="in">
+                               Pages
+                           </div>
+                       </a>
+                   </li>
+                   <li>
+                       <a href="app-components.html" class="item">
+                           <div class="icon-box bg-primary">
+                               <ion-icon name="apps-outline"></ion-icon>
+                           </div>
+                           <div class="in">
+                               Components
+                           </div>
+                       </a>
+                   </li>
+                   <li>
+                       <a href="app-cards.html" class="item">
+                           <div class="icon-box bg-primary">
+                               <ion-icon name="card-outline"></ion-icon>
+                           </div>
+                           <div class="in">
+                               My Cards
+                           </div>
+                       </a>
+                   </li>
+               </ul>
+               <!-- * menu -->
+
+               <!-- others -->
+               <div class="listview-title mt-1">Others</div>
+               <ul class="listview flush transparent no-line image-listview">
+                   <li>
+                       <a href="app-settings.html" class="item">
+                           <div class="icon-box bg-primary">
+                               <ion-icon name="settings-outline"></ion-icon>
+                           </div>
+                           <div class="in">
+                               Settings
+                           </div>
+                       </a>
+                   </li>
+                   <li>
+                       <a href="component-messages.html" class="item">
+                           <div class="icon-box bg-primary">
+                               <ion-icon name="chatbubble-outline"></ion-icon>
+                           </div>
+                           <div class="in">
+                               Support
+                           </div>
+                       </a>
+                   </li>
+                   <li>
+                       <a href="app-login.html" class="item">
+                           <div class="icon-box bg-primary">
+                               <ion-icon name="log-out-outline"></ion-icon>
+                           </div>
+                           <div class="in">
+                               Log out
+                           </div>
+                       </a>
+                   </li>
+
+
+               </ul>
+               <!-- * others -->
+
+               <!-- send money -->
+               <div class="listview-title mt-1">Send Money</div>
+               <ul class="listview image-listview flush transparent no-line">
+                   <li>
+                       <a href="#" class="item">
+                           <img src="assets/img/sample/avatar/avatar2.jpg" alt="image" class="image">
+                           <div class="in">
+                               <div>Artem Sazonov</div>
+                           </div>
+                       </a>
+                   </li>
+                   <li>
+                       <a href="#" class="item">
+                           <img src="assets/img/sample/avatar/avatar4.jpg" alt="image" class="image">
+                           <div class="in">
+                               <div>Sophie Asveld</div>
+                           </div>
+                       </a>
+                   </li>
+                   <li>
+                       <a href="#" class="item">
+                           <img src="assets/img/sample/avatar/avatar3.jpg" alt="image" class="image">
+                           <div class="in">
+                               <div>Kobus van de Vegte</div>
+                           </div>
+                       </a>
+                   </li>
+               </ul>
+               <!-- * send money -->
+
            </div>
-         </li>
-         <li><a href="page-login.html"><i class="bi bi-box-arrow-right"></i>Logout</a></li>
-       </ul>
-       <!-- Social Info -->
-       <div class="social-info-wrap"><a href="#"><i class="bi bi-facebook"></i></a><a href="#"><i class="bi bi-twitter"></i></a><a href="#"><i class="bi bi-linkedin"></i></a></div>
-       <!-- Copyright Info -->
-       <div class="copyright-info">
-         <p>2021 &copy; Made by<a href="#">Designing World</a></p>
        </div>
-     </div>
    </div>
- </div>
+</div>

@@ -1,16 +1,9 @@
- <!-- All JavaScript Files -->
- <script src="{!! asset('assets/js/bootstrap.bundle.min.js') !!}"></script>
- <script src="{!! asset('assets/js/slideToggle.min.js') !!}"></script>
- <script src="{!! asset('assets/js/internet-status.js') !!}"></script>
- <script src="{!! asset('assets/js/tiny-slider.js') !!}"></script>
- <script src="{!! asset('assets/js/baguetteBox.min.js') !!}"></script>
- <script src="{!! asset('assets/js/countdown.js') !!}"></script>
- <script src="{!! asset('assets/js/rangeslider.min.js') !!}"></script>
- <script src="{!! asset('assets/js/vanilla-dataTables.min.js') !!}"></script>
- <script src="{!! asset('assets/js/index.js') !!}"></script>
- <script src="{!! asset('assets/js/imagesloaded.pkgd.min.js') !!}"></script>
- <script src="{!! asset('assets/js/isotope.pkgd.min.js') !!}"></script>
- <script src="{!! asset('assets/js/dark-rtl.js') !!}"></script>
- <script src="{!! asset('assets/js/active.js') !!}"></script>
- <!-- PWA -->
- <script src="{!! asset('assets/js/pwa.js') !!}"></script>
+<!-- ========= JS Files =========  -->
+<!-- Bootstrap -->
+<script src="{!! asset('assets/js/lib/bootstrap.bundle.min.js') !!}"></script>
+<!-- Ionicons -->
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+<!-- Splide -->
+<script src="{!! asset('assets/js/plugins/splide/splide.min.js') !!}"></script>
+<!-- Base Js File -->
+{{-- <script src="{!! asset('assets/js/base.js') !!}"></script> --}}

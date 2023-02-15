@@ -11,4 +11,9 @@ class accountController extends Controller
    public function blank(){
       return view('blank');
    }
+
+   //dashboard
+   public function dashboard(){
+      return view('account.dashboard');
+   }
 }
