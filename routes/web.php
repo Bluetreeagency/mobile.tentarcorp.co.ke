@@ -15,5 +15,15 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [App\Http\Controllers\pagesController::class, 'home'])->name('home.page');
 Auth::routes();
-Route::get('blank', [App\Http\Controllers\account\accountController::class, 'blank']);
+Route::post('signup/account', [App\Http\Controllers\Auth\RegisterController::class, 'signup'])->name('save.signup');
+
 Route::get('dashboard', [App\Http\Controllers\account\accountController::class, 'dashboard'])->name('dashboard.page');
+
+Route::post('otp/verification', [App\Http\Controllers\account\accountController::class, 'otp_verification'])->name('otp.verification');
+Route::get('otp/resend', [App\Http\Controllers\account\accountController::class, 'resend_otp'])->name('otp.resend');
+
+Route::get('loan-request', [App\Http\Controllers\account\loansController::class, 'create'])->name('loan.request');
+
+
+Route::get('blank', [App\Http\Controllers\account\accountController::class, 'blank']);
+Route::get('test', [App\Http\Controllers\pagesController::class, 'test']);

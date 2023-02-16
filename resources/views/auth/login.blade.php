@@ -1,44 +1,91 @@
-
-<!DOCTYPE html>
-<html lang="en">
-   @include('partials._head')
-  <body>
-    <!-- Preloader -->
-    <div id="preloader">
-      <div class="spinner-grow text-primary" role="status"><span class="visually-hidden">Loading...</span></div>
-    </div>
-    <!-- Internet Connection Status -->
-    <!-- # This code for showing internet connection status -->
-    <div class="internet-connection-status" id="internetStatus"></div>
-    <!-- Back Button -->
-    <div class="login-back-button"><a href="element-hero-blocks.html">
-        <svg class="bi bi-arrow-left-short" width="32" height="32" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-          <path fill-rule="evenodd" d="M12 8a.5.5 0 0 1-.5.5H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5a.5.5 0 0 1 .5.5z"></path>
-        </svg></a></div>
-    <!-- Login Wrapper Area -->
-    <div class="login-wrapper d-flex align-items-center justify-content-center">
-      <div class="custom-container">
-        <div class="text-center px-4"><img class="login-intro-img" src="{!! asset('assets/img/bg-img/36.png') !!}" alt=""></div>
-        <!-- Register Form -->
-        <div class="register-form mt-4">
-          <h6 class="mb-3 text-center">Log in to continue to Affan.</h6>
-          <form action="https://designing-world.com/affan-1.4.0/page-home.html">
-            <div class="form-group">
-              <input class="form-control" type="text" placeholder="Username">
-            </div>
-            <div class="form-group position-relative">
-              <input class="form-control" id="psw-input" type="password" placeholder="Enter Password">
-              <div class="position-absolute" id="password-visibility"><i class="bi bi-eye"></i><i class="bi bi-eye-slash"></i></div>
-            </div>
-            <button class="btn btn-primary w-100" type="submit">Sign In</button>
-          </form>
-        </div>
-        <!-- Login Meta -->
-        <div class="login-meta-data text-center"><a class="stretched-link forgot-password d-block mt-3 mb-1" href="page-forget-password.html">Forgot Password?</a>
-          <p class="mb-0">Didn't have an account? <a class="stretched-link" href="page-register.html">Register Now</a></p>
-        </div>
+@extends('layouts.app')
+@section('header')
+   <!-- App Header -->
+   <div class="appHeader no-border transparent position-absolute">
+      <div class="left">
+         <a href="#" class="headerButton goBack">
+            <ion-icon name="chevron-back-outline"></ion-icon>
+         </a>
       </div>
-    </div>
-   @include('partials._javascripts')
-  </body>
-</html>
+      <div class="pageTitle"></div>
+      <div class="right">
+         <a href="{!! route('register') !!}" class="headerButton">
+            Register
+         </a>
+      </div>
+   </div>
+   <!-- * App Header -->
+@endsection
+@section('content')
+   <div class="container">
+      <div class="row justify-content-center">
+         <div class="col-md-8">
+            <h1 class="text-center mt-5">Log in</h1>
+            @include('partials._messages')
+            <div class="card">
+               <div class="card-body">
+                  <form method="POST" action="{{ route('login') }}">
+                     @csrf
+                     <div class="row mb-1">
+                        <label for="" class="col-md-4 col-form-label text-md-end">{{ __('ID Number') }}</label>
+
+                        <div class="col-md-6">
+                           <input type="number" class="form-control @error('id_number') is-invalid @enderror" name="id_number" value="{{ old('id_number') }}" required autofocus>
+
+                           @error('id_number')
+                                 <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                 </span>
+                           @enderror
+                        </div>
+                     </div>
+
+                     <div class="row mb-1">
+                        <label for="password" class="col-md-4 col-form-label text-md-end">{{ __('Password') }}</label>
+
+                        <div class="col-md-6">
+                           <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required>
+
+                           @error('password')
+                                 <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                 </span>
+                           @enderror
+                        </div>
+                     </div>
+
+                     <div class="row mb-1">
+                        <div class="col-md-6 offset-md-4">
+                           <div class="form-check">
+                              <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
+
+                              <label class="form-check-label" for="remember">
+                                 {{ __('Remember Me') }}
+                              </label>
+                           </div>
+                        </div>
+                     </div>
+
+                     <div class="row mb-0">
+                        <div class="col-md-8 offset-md-4 mb-3">
+                           <button type="submit" class="btn btn-primary">
+                                 {{ __('Login') }}
+                           </button>
+
+                           @if (Route::has('password.request'))
+                                 <a class="btn btn-link" href="{{ route('password.request') }}">
+                                    {{ __('Forgot Your Password?') }}
+                                 </a>
+                           @endif
+                        </div>
+                        <div class="col-md-12 border-top">
+                           <h2 class="text-center mt-3"><a href="{!! route('register') !!}" class="">Sign up</a></h2>
+                        </div>
+                     </div>
+                  </form>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+@endsection

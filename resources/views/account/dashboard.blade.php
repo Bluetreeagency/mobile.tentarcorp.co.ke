@@ -37,7 +37,7 @@
                </a>
             </div>
             <div class="item">
-               <a href="#" data-bs-toggle="modal" data-bs-target="#sendActionSheet">
+               <a href="{!! route('loan.request') !!}" data-bs-toggle="modal" data-bs-target="#sendActionSheet">
                   <div class="icon-wrapper">
                      <i class="fal fa-hand-holding-usd"></i>
                   </div>
@@ -61,10 +61,12 @@
       <h2 class="title text-center mt-5 mb-5">What would you like to do ?</h2>
       <div class="row mt-2">
          <div class="col-4 mb-2">
-            <div class="stat-box text-center">
-               <i class="fal fa-sack-dollar fa-2x"></i>
-               <p class="mb-1 text-sm">Request Loans</p>
-            </div>
+            <a href="{!! route('loan.request') !!}">
+               <div class="stat-box text-center">
+                  <i class="fal fa-sack-dollar fa-2x"></i>
+                  <p class="mb-1 text-sm">Request Loans</p>
+               </div>
+            </a>
          </div>
          <div class="col-4 mb-2">
             <div class="stat-box text-center">

@@ -18,9 +18,11 @@
       </div>
       <!-- * App Capsule -->
 
-      <!-- App Bottom Menu -->
-      @include('partials._footer_nav')
-      <!-- * App Bottom Menu -->
+      @auth
+         <!-- App Bottom Menu -->
+         @include('partials._footer_nav')
+         <!-- * App Bottom Menu -->
+      @endauth
       @include('partials._javascripts')
    </body>
 </html>
