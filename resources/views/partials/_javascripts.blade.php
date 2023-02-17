@@ -61,3 +61,87 @@
 <script>
    new Splide( '.splide' ).mount();
 </script>
+
+<script src="{!! asset('assets/js/plugins/sweetalert/dist/sweetalert2.min.js') !!}"></script>
+<script>
+   const Toast = Swal.mixin({
+      toast: true,
+      position: 'top-end',
+      showConfirmButton: false,
+      showCloseButton: true,
+      timer: 5000,
+      timerProgressBar:true,
+      didOpen: (toast) => {
+         toast.addEventListener('mouseenter', Swal.stopTimer)
+         toast.addEventListener('mouseleave', Swal.resumeTimer)
+      }
+   });
+
+   window.addEventListener('alert',({detail:{type,message}})=>{
+      Toast.fire({
+         icon:type,
+         title:message
+      })
+   })
+</script>
+@livewireScripts
+
+<!-- Use as a Vanilla JS plugin -->
+<script src="{!! asset('assets/js/plugins/intl-tel-input-master/build/js/intlTelInput.min.js') !!}"></script>
+<script>
+   var input = document.querySelector("#phone"),
+      errorMsg = document.querySelector("#error-msg"),
+      validMsg = document.querySelector("#valid-msg");
+      submitBtn = document.querySelector("#submitForm");
+      phoneValid = document.querySelector("#phone_valid");
+
+   // Error messages based on the code returned from getValidationError
+   var errorMap = [ "Invalid number", "Invalid country code", "Too short", "Too long", "Invalid number"];
+
+   // Initialise plugin
+   var intl = window.intlTelInput(input, {
+      initialCountry: "auto",
+      nationalMode:false,
+      geoIpLookup: function(success, failure) {
+         $.get("https://ipinfo.io", function() {}, "jsonp").always(function(resp) {
+            var countryCode = (resp && resp.country) ? resp.country : "";
+            success(countryCode);
+         });
+      },
+
+      utilsScript: "{!! asset('assets/js/plugins/intl-tel-input-master/build/js/utils.js') !!}",
+   });
+
+   var reset = function() {
+      input.classList.remove("error");
+      errorMsg.innerHTML = "";
+      errorMsg.classList.add("hide");
+      validMsg.classList.add("hide");
+      submitBtn.classList.add("hide");
+      phoneValid.classList.add("hide");
+   };
+
+   // Validate on blur event
+   input.addEventListener('blur', function() {
+      reset();
+      if(input.value.trim()){
+         if(intl.isValidNumber()){
+            validMsg.classList.remove("hide");
+            submitBtn.classList.remove("hide");
+            phoneValid.classList.add("hide");
+         }else{
+            input.classList.add("error");
+            var errorCode = intl.getValidationError();
+            errorMsg.innerHTML = errorMap[errorCode];
+            errorMsg.classList.remove("hide");
+            phoneValid.classList.remove("hide");
+         }
+      }
+   });
+
+   // Reset on keyup/change event
+   input.addEventListener('change', reset);
+   input.addEventListener('keyup', reset);
+
+</script>
+

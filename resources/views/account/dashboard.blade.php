@@ -45,11 +45,11 @@
                </a>
             </div>
             <div class="item">
-               <a href="app-cards.html">
+               <a href="{!! route('loan.index') !!}">
                   <div class="icon-wrapper bg-success">
                      <i class="fal fa-receipt"></i>
                   </div>
-                  <strong>Transactions</strong>
+                  <strong>Loan History</strong>
                </a>
             </div>
          </div>

@@ -22,6 +22,7 @@ Route::get('dashboard', [App\Http\Controllers\account\accountController::class, 
 Route::post('otp/verification', [App\Http\Controllers\account\accountController::class, 'otp_verification'])->name('otp.verification');
 Route::get('otp/resend', [App\Http\Controllers\account\accountController::class, 'resend_otp'])->name('otp.resend');
 
+Route::get('my-loans', [App\Http\Controllers\account\loansController::class, 'index'])->name('loan.index');
 Route::get('loan-request', [App\Http\Controllers\account\loansController::class, 'create'])->name('loan.request');
 
 

@@ -6,15 +6,15 @@
        </a>
    </div>
    <div class="pageTitle">
-      <img src="assets/img/logo.png" alt="logo" class="logo">
+      <img src="assets/img/logo.jpg" alt="logo" class="logo">
    </div>
    <div class="right">
       <a href="app-notifications.html" class="headerButton">
          <ion-icon class="icon" name="notifications-outline"></ion-icon>
-         <span class="badge badge-danger">4</span>
+         <span class="badge badge-danger">0</span>
       </a>
       <a href="app-settings.html" class="headerButton">
-         <img src="assets/img/sample/avatar/avatar1.jpg" alt="image" class="imaged w32">
+         <img src="https://ui-avatars.com/api/?name={!! Auth::user()->first_name.' '.Auth::user()->last_name !!}&rounded=true&size=40" alt="image" class="imaged w32">
          <span class="badge badge-danger">6</span>
       </a>
    </div>
