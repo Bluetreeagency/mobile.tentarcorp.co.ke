@@ -21,7 +21,7 @@
             </div>
             <div class="right">
                <a href="#" class="button" data-bs-toggle="modal" data-bs-target="#depositActionSheet">
-                  <ion-icon name="add-outline"></ion-icon>
+                  <i class="far fa-eye"></i>
                </a>
             </div>
          </div>
@@ -68,18 +68,18 @@
                </div>
             </a>
          </div>
-         <div class="col-4 mb-2">
+         {{-- <div class="col-4 mb-2">
             <div class="stat-box text-center">
                <i class="fal fa-mobile fa-2x"></i>
                <p class="mb-1 text-sm">Buy Airtime</p>
             </div>
-         </div>
-         <div class="col-4 mb-2">
+         </div> --}}
+         {{-- <div class="col-4 mb-2">
             <div class="stat-box text-center">
                <i class="fal fa-bolt fa-2x"></i>
                <p class="mb-1 text-sm">Buy Tokens</p>
             </div>
-         </div>
+         </div> --}}
          <div class="col-4 mb-2">
             <div class="stat-box text-center">
                <i class="fal fa-car-building fa-2x"></i>
@@ -88,16 +88,47 @@
          </div>
          <div class="col-4 mb-2">
             <div class="stat-box text-center">
+               <i class="fal fa-handshake fa-2x"></i>
+               <p class="mb-2 text-sm">Invites</p>
+            </div>
+         </div>
+         {{-- <div class="col-4 mb-2">
+            <div class="stat-box text-center">
                <i class="fal fa-hand-holding-magic fa-2x"></i>
                <p class="mb-1 text-sm">Retirement Plan</p>
             </div>
-         </div>
-         <div class="col-4 mb-2">
+         </div> --}}
+         {{-- <div class="col-4 mb-2">
             <div class="stat-box text-center">
                <i class="fal fa-hands-heart fa-2x"></i>
                <p class="mb-1 text-sm">Get Insurance</p>
             </div>
-         </div>
+         </div> --}}
       </div>
   </div>
+
+  <!-- Transactions -->
+   <div class="section mt-4 mb-4">
+      <div class="section-heading">
+         <h2 class="title">Recent Loan Applications</h2>
+         <a href="{!! route('loan.index') !!}" class="link">View All</a>
+      </div>
+      <div class="transactions">
+         @foreach ($loans as $loan)
+            <a href="app-transaction-detail.html" class="item">
+               <div class="detail">
+                  <i class="fal fa-exclamation-circle image-block imaged w48 fa-3x"></i>
+                  <div>
+                     <strong>{!! date('F jS, Y', strtotime($loan->application_date)) !!}</strong>
+                     <p>{!! $loan->type !!} | <span class="badge badge-primary">Awaiting Approval</span></p>
+                  </div>
+               </div>
+               <div class="right">
+                  <div class="price text-danger"> ksh {!! number_format($loan->amount_applied) !!}</div>
+               </div>
+            </a>
+         @endforeach
+      </div>
+   </div>
+   <!-- * Transactions -->
 @endsection

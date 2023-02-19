@@ -29,7 +29,6 @@
 
    <link rel="stylesheet" href="{!! asset('assets/css/style.css') !!}">
    <link rel="stylesheet" href="{!! asset('assets/fonts/fontawesome/css/all.min.css') !!}">
-   <link rel="stylesheet" href="{!! asset('assets/css/custome.css') !!}">
    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
    <link href="{!! asset('assets/fonts/main/bundled.fonts.css') !!}" rel="stylesheet">
    <link rel="stylesheet" href="{!! asset('assets/js/plugins/intl-tel-input-master/build/css/intlTelInput.css') !!}">
@@ -43,7 +42,7 @@
          })
       }
    </script>
-
+   <link rel="stylesheet" href="{!! asset('assets/css/custome.css') !!}">
    @yield('stylesheet')
    @livewireStyles
 </head>

@@ -1,13 +1,14 @@
 <?php
 
 namespace App\Http\Controllers\account;
-
 use App\Http\Controllers\Controller;
-use App\Models\User;
 use Illuminate\Http\Request;
-use Auth;
+use App\Models\Loans;
 use Carbon\Carbon;
+use App\Models\User;
+use Helper;
 use Session;
+use Auth;
 class accountController extends Controller
 {
    /**
@@ -32,8 +33,9 @@ class accountController extends Controller
       if(!Auth::user()->phone_number_verified_at){
          return view('account.otp');
       }
+      $loans = Loans::where('user_code',Auth::user()->user_code)->limit(4)->get();
 
-      return view('account.dashboard');
+      return view('account.dashboard', compact('loans'));
    }
 
    //verify phone number
@@ -93,6 +95,207 @@ class accountController extends Controller
       $user->save();
 
       Session::flash('success','OTP code has been sent to '.substr($user->phone_number, 0, 6).'******'.substr($user->phone_number,-2));
+
+      return redirect()->back();
+   }
+
+   //profile
+   public function profile(){
+      $profile = Auth::user();
+
+      return view('account.profile.profile', compact('profile'));
+   }
+
+   //update profile
+   public function update_profile(Request $request){
+      $this->validate($request,[
+         'gender'            => 'required',
+         'dob'               => 'required',
+         'residence_address' => 'required',
+      ]);
+
+      $profile                              = Auth::user();
+      $profile->dob                         = $request->dob;
+      $profile->gender                      = $request->gender;
+      $profile->alternative_number          = $request->alternative_number;
+      $profile->residence_address           = $request->residence_address;
+      $profile->postal_address              = $request->postal_address;
+      $profile->svc_number                  = $request->svc_number;
+      $profile->email                       = $request->email;
+      $profile->work_station                = $request->work_station;
+      $profile->next_of_kin_1_full_name     = $request->next_of_kin_1_full_name;
+      $profile->next_of_kin_1_mobile_number = $request->next_of_kin_1_mobile_number;
+      $profile->next_of_kin_1_relationship  = $request->next_of_kin_1_relationship;
+      $profile->next_of_kin_2_full_name     = $request->next_of_kin_2_full_name;
+      $profile->next_of_kin_2_mobile_number = $request->next_of_kin_2_mobile_number;
+      $profile->next_of_kin_2_relationship  = $request->next_of_kin_2_relationship;
+      $profile->save();
+
+      Session::flash('success','Profile details updated successfully');
+
+      return redirect()->back();
+   }
+
+   //documents
+   public function documents(){
+      $documents = Auth::user();
+      return view('account.profile.documents', compact('documents'));
+   }
+
+   //update documents
+   public function update_documents(Request $request){
+      $documents = Auth::user();
+
+      // ID front image
+      if(!empty($request->id_front_image)){
+			$path = base_path().'/public/account/'.Auth::user()->user_code.'/documents/';
+
+			if (!file_exists($path)) {
+            mkdir($path, 0777,true);
+         }
+
+			$file = $request->file('id_front_image');
+
+         // GET THE FILE EXTENSION
+         $extension = $file->getClientOriginalExtension();
+         // RENAME THE UPLOAD WITH RANDOM NUMBER
+         $fileName = Helper::generateRandomString(). '.' . $extension;
+
+         // MOVE THE UPLOADED FILES TO THE DESTINATION DIRECTORY
+         $file->move($path, $fileName);
+
+         $documents->id_front_image = $fileName;
+      }
+
+      //ID back image
+      if(!empty($request->id_back_image)){
+			$path = base_path().'/public/account/'.Auth::user()->user_code.'/documents/';
+
+			if (!file_exists($path)) {
+            mkdir($path, 0777,true);
+         }
+
+			$file = $request->file('id_back_image');
+
+         // GET THE FILE EXTENSION
+         $extension = $file->getClientOriginalExtension();
+         // RENAME THE UPLOAD WITH RANDOM NUMBER
+         $fileName = Helper::generateRandomString(). '.' . $extension;
+
+         // MOVE THE UPLOADED FILES TO THE DESTINATION DIRECTORY
+         $file->move($path, $fileName);
+
+         $documents->id_back_image = $fileName;
+      }
+
+      //payslip 1
+      if(!empty($request->payslip_1)){
+			$path = base_path().'/public/account/'.Auth::user()->user_code.'/documents/';
+
+			if (!file_exists($path)) {
+            mkdir($path, 0777,true);
+         }
+
+			$file = $request->file('payslip_1');
+
+         // GET THE FILE EXTENSION
+         $extension = $file->getClientOriginalExtension();
+         // RENAME THE UPLOAD WITH RANDOM NUMBER
+         $fileName = Helper::generateRandomString(). '.' . $extension;
+
+         // MOVE THE UPLOADED FILES TO THE DESTINATION DIRECTORY
+         $file->move($path, $fileName);
+
+         $documents->payslip_1 = $fileName;
+      }
+
+      //payslip 2
+      if(!empty($request->payslip_2)){
+			$path = base_path().'/public/account/'.Auth::user()->user_code.'/documents/';
+
+			if (!file_exists($path)) {
+            mkdir($path, 0777,true);
+         }
+
+			$file = $request->file('payslip_2');
+
+         // GET THE FILE EXTENSION
+         $extension = $file->getClientOriginalExtension();
+         // RENAME THE UPLOAD WITH RANDOM NUMBER
+         $fileName = Helper::generateRandomString(). '.' . $extension;
+
+         // MOVE THE UPLOADED FILES TO THE DESTINATION DIRECTORY
+         $file->move($path, $fileName);
+
+         $documents->payslip_2 = $fileName;
+      }
+
+      //payslip 2
+      if(!empty($request->payslip_3)){
+			$path = base_path().'/public/account/'.Auth::user()->user_code.'/documents/';
+
+			if (!file_exists($path)) {
+            mkdir($path, 0777,true);
+         }
+
+			$file = $request->file('payslip_3');
+
+         // GET THE FILE EXTENSION
+         $extension = $file->getClientOriginalExtension();
+         // RENAME THE UPLOAD WITH RANDOM NUMBER
+         $fileName = Helper::generateRandomString(). '.' . $extension;
+
+         // MOVE THE UPLOADED FILES TO THE DESTINATION DIRECTORY
+         $file->move($path, $fileName);
+
+         $documents->payslip_3 = $fileName;
+      }
+
+      //service card
+      if(!empty($request->service_card)){
+			$path = base_path().'/public/account/'.Auth::user()->user_code.'/documents/';
+
+			if (!file_exists($path)) {
+            mkdir($path, 0777,true);
+         }
+
+			$file = $request->file('service_card');
+
+         // GET THE FILE EXTENSION
+         $extension = $file->getClientOriginalExtension();
+         // RENAME THE UPLOAD WITH RANDOM NUMBER
+         $fileName = Helper::generateRandomString(). '.' . $extension;
+
+         // MOVE THE UPLOADED FILES TO THE DESTINATION DIRECTORY
+         $file->move($path, $fileName);
+
+         $documents->service_card = $fileName;
+      }
+
+      //service card
+      if(!empty($request->kra_pin)){
+			$path = base_path().'/public/account/'.Auth::user()->user_code.'/documents/';
+
+			if (!file_exists($path)) {
+            mkdir($path, 0777,true);
+         }
+
+			$file = $request->file('kra_pin');
+
+         // GET THE FILE EXTENSION
+         $extension = $file->getClientOriginalExtension();
+         // RENAME THE UPLOAD WITH RANDOM NUMBER
+         $fileName = Helper::generateRandomString(). '.' . $extension;
+
+         // MOVE THE UPLOADED FILES TO THE DESTINATION DIRECTORY
+         $file->move($path, $fileName);
+
+         $documents->kra_pin = $fileName;
+      }
+
+      $documents->save();
+
+      Session::flash('success','Documents successfully upload');
 
       return redirect()->back();
    }

@@ -23,6 +23,7 @@ return new class extends Migration
          $table->string('interest_rate')->nullable();
          $table->string('interest_amount')->nullable();
          $table->string('repayment_amount')->nullable();
+         $table->string('balance')->nullable();
          $table->string('repayment_period')->nullable();
          $table->string('processing_fee')->nullable();
          $table->string('repayment_date')->nullable();

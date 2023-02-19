@@ -100,7 +100,7 @@
 
    // Initialise plugin
    var intl = window.intlTelInput(input, {
-      initialCountry: "auto",
+      initialCountry: "ke",
       nationalMode:false,
       geoIpLookup: function(success, failure) {
          $.get("https://ipinfo.io", function() {}, "jsonp").always(function(resp) {
@@ -108,9 +108,9 @@
             success(countryCode);
          });
       },
-
       utilsScript: "{!! asset('assets/js/plugins/intl-tel-input-master/build/js/utils.js') !!}",
    });
+
 
    var reset = function() {
       input.classList.remove("error");
