@@ -5,10 +5,10 @@
          <strong>Home</strong>
       </div>
    </a>
-   <a href=#" class="item">
+   <a href="{!! route('loan.index') !!}" class="item">
       <div class="col">
       <i class="fal fa-sack-dollar fa-2x"></i>
-         <strong>Loans</strong>
+         <strong>My Loans</strong>
       </div>
    </a>
    <a href="#" class="item">
@@ -23,7 +23,7 @@
          <strong>Profile</strong>
       </div>
    </a>
-   <a href="#" class="item">
+   <a href="{!! url('logout') !!}" class="item">
       <div class="col">
          <i class="fal fa-sign-out-alt fa-2x"></i>
          <strong>Logout</strong>

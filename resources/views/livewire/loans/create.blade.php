@@ -19,10 +19,19 @@
             </div>
             @error('amount')<span class="error text-danger">{{$message}}</span>@enderror
          </div>
+         @php
+            if($loan_type == 'Dharura'){
+               $paymentPeriod = 1;
+            }elseif($loan_type == 'Miradi'){
+               $paymentPeriod = 3;
+            }else{
+               $paymentPeriod = 0;
+            }
+         @endphp
          <div class="form-group basic">
             <div class="input-wrapper">
                <label class="label">Payment period in months</label>
-               <input type="number" wire:model="payment_period" class="form-control" id="phone4" placeholder="Enter mounth" required>
+               <input type="number" value="{{ $paymentPeriod }}" class="form-control" id="phone4" placeholder="Enter mounth" readonly>
             </div>
             @error('payment_period')<span class="error text-danger">{{$message}}</span>@enderror
          </div>
@@ -36,14 +45,17 @@
       </div>
    </div>
 
+   @php
+      $intrest = $amount * 0.125 * $paymentPeriod;
+   @endphp
    <div class="goals mt-3">
       <!-- item -->
       <div class="item">
          <div class="in mb-0">
             <div>
-               <h4>Interest Per Month</h4>
+               <h4>Interest Rate Per Month</h4>
             </div>
-            <div class="price">ksh 450</div>
+            <div class="price">12.5%</div>
          </div>
       </div>
       <div class="item">
@@ -51,7 +63,7 @@
             <div>
                <h4>Repayment Period</h4>
             </div>
-            <div class="price">ksh 450</div>
+            <div class="price">Monthly</div>
          </div>
       </div>
       <div class="item">
@@ -59,15 +71,15 @@
             <div>
                <h4>Interest Amount P.M</h4>
             </div>
-            <div class="price">ksh 450</div>
+            <div class="price">ksh {!! number_format($intrest) !!}</div>
          </div>
       </div>
       <div class="item">
          <div class="in mb-0">
             <div>
-               <h4>Amount To </h4>
+               <h4>Amount To Pay</h4>
             </div>
-            <div class="price">ksh 450</div>
+            <div class="price">ksh {!! number_format($intrest + $amount)!!}</div>
          </div>
       </div>
    </div>

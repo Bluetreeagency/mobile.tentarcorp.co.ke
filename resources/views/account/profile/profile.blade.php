@@ -83,7 +83,7 @@
                <div class="form-group basic">
                   <div class="input-wrapper">
                      <label class="label text-primary">Work Station</label>
-                     {!! Form::select('work_station',[''=>'Choose Station','D.O.D'=>'D.O.D','Embakasi'=>'Embakasi','Langata'=>'Langata','Kahawa'=>'Kahawa','Moi Air Base'=>'Moi Air Base','Male'=>'Male'],null,['class'=>'form-control custom-select','required'=>'']) !!}
+                     {!! Form::select('work_station',[''=>'Choose Station','D.O.D'=>'D.O.D','Embakasi'=>'Embakasi','Langata'=>'Langata','Kahawa'=>'Kahawa','Moi Air Base'=>'Moi Air Base'],null,['class'=>'form-control custom-select','required'=>'']) !!}
                   </div>
                </div>
             </div>

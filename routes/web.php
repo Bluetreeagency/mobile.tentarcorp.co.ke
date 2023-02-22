@@ -15,6 +15,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [App\Http\Controllers\pagesController::class, 'home'])->name('home.page');
 Auth::routes();
+Route::get('logout', [App\Http\Controllers\Auth\LoginController::class, 'logout']);
 Route::post('signup/account', [App\Http\Controllers\Auth\RegisterController::class, 'signup'])->name('save.signup');
 
 Route::get('dashboard', [App\Http\Controllers\account\accountController::class, 'dashboard'])->name('dashboard.page');

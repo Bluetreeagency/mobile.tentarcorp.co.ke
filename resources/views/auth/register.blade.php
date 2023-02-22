@@ -64,7 +64,6 @@
                         <option value="Military">Military</option>
                         <option value="Civilian">Civilian</option>
                      </select>
-                     phone_number
                   </div>
                </div>
                <div class="form-group basic">

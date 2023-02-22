@@ -34,8 +34,9 @@ class accountController extends Controller
          return view('account.otp');
       }
       $loans = Loans::where('user_code',Auth::user()->user_code)->limit(4)->get();
+      $balance = Loans::where('user_code',Auth::user()->user_code)->sum('balance');
 
-      return view('account.dashboard', compact('loans'));
+      return view('account.dashboard', compact('loans','balance'));
    }
 
    //verify phone number

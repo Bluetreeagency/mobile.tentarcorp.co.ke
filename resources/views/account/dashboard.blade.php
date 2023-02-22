@@ -17,7 +17,7 @@
          <div class="balance">
             <div class="left">
                <span class="title">Total Balance</span>
-               <h2 class="total">ksh 562.50</h2>
+               <h2 class="total">ksh {!! number_format($balance) !!}</h2>
             </div>
             <div class="right">
                <a href="#" class="button" data-bs-toggle="modal" data-bs-target="#depositActionSheet">
@@ -115,16 +115,25 @@
       </div>
       <div class="transactions">
          @foreach ($loans as $loan)
-            <a href="app-transaction-detail.html" class="item">
+            <a href="#" class="item">
                <div class="detail">
                   <i class="fal fa-exclamation-circle image-block imaged w48 fa-3x"></i>
                   <div>
+                     ksh {!! number_format($loan->repayment_amount) !!}
                      <strong>{!! date('F jS, Y', strtotime($loan->application_date)) !!}</strong>
-                     <p>{!! $loan->type !!} | <span class="badge badge-primary">Awaiting Approval</span></p>
+                     <b class="text-warning">{!! $loan->type !!}</b> <br>
+                     @if($loan->loan_status == 'Pending')
+                        <span class="badge badge-warning">{{ $loan->loan_status }}</span>
+                     @elseif ($loan->loan_status == 'Approved')
+                        <span class="badge badge-success">{{ $loan->loan_status }}</span>
+                     @elseif($loan->loan_status == 'Rejected')
+                        <span class="badge badge-danger">{{ $loan->loan_status }}</span>
+                     @elseif($loan->loan_status == 'Waiting disbursement')
+                        <span class="badge badge-danger">{{ $loan->loan_status }}</span>
+                     @else
+                        <span class="badge badge-primary">Awaiting Approval</span>
+                     @endif
                   </div>
-               </div>
-               <div class="right">
-                  <div class="price text-danger"> ksh {!! number_format($loan->amount_applied) !!}</div>
                </div>
             </a>
          @endforeach
