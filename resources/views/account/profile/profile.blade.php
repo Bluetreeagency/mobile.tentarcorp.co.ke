@@ -22,10 +22,27 @@
             </ul>
          </div>
       </div>
+      <div class="section mt-3 text-center mb-3">
+         <div class="avatar-section">
+            <a href="#">
+               @if(Auth::user()->avatar)
+                  <img src="{!! asset('account/'.Auth::user()->user_code.'/documents/'.Auth::user()->avatar) !!}" alt="{!! Auth::user()->first_name.' '.Auth::user()->last_name !!}" class="imaged w100 rounded">
+               @else
+                  <img src="https://ui-avatars.com/api/?name={!! Auth::user()->first_name.' '.Auth::user()->last_name !!}&rounded=true&size=40" alt="{!! Auth::user()->first_name.' '.Auth::user()->last_name !!}" class="imaged w100 rounded">
+               @endif
+            </a>
+         </div>
+      </div>
       {!! Form::model($profile, ['route' => ['profile.update'], 'method'=>'post','enctype'=>'multipart/form-data']) !!}
          {!! csrf_field() !!}
          <div class="card">
             <div class="card-body">
+               <div class="form-group basic">
+                  <div class="input-wrapper">
+                     <label class="label text-primary">Upload Your Profile Picture</label>
+                     {!! Form::file('profile_picture',null,['class'=>'form-control']) !!}
+                  </div>
+               </div>
                <div class="form-group basic">
                   <div class="input-wrapper">
                      <label class="label text-primary">Date of Birth</label>
@@ -107,7 +124,7 @@
                <div class="form-group basic">
                   <div class="input-wrapper">
                      <label class="label text-primary">Relationship</label>
-                     {!! Form::select('next_of_kin_1_relationship',[''=>'Choose Relationship','Father'=>'Father','Mother'=>'Mother','Son'=>'Son','Daughter'=>'Daughter','Cousin'=>'Cousin','Grand Father'=>'Grand Father','Grand Mother'=>'Grand Mother','Auncle'=>'Auncle','Aunty'=>'Aunty','Wife'=>'Wife','Husband'=>'Husband','Friend'=>'Friend'],null,['class'=>'form-control','placeholder'=>'Enter Mobile Number']) !!}
+                     {!! Form::select('next_of_kin_1_relationship',[''=>'Choose Relationship','Father'=>'Father','Mother'=>'Mother','Son'=>'Son','Daughter'=>'Daughter','Cousin'=>'Cousin','Grand Father'=>'Grand Father','Grand Mother'=>'Grand Mother','Uncle'=>'Uncle','Aunt'=>'Aunt','Wife'=>'Wife','Husband'=>'Husband','Friend'=>'Friend','Brother'=>'Brother','Sister'=>'Sister'],null,['class'=>'form-control','placeholder'=>'Enter Mobile Number']) !!}
                   </div>
                </div>
                <h3 class="text-center mt-4">Next of kin 2</h3>
@@ -126,7 +143,7 @@
                <div class="form-group basic">
                   <div class="input-wrapper">
                      <label class="label text-primary">Relationship</label>
-                     {!! Form::select('next_of_kin_2_relationship',[''=>'Choose Relationship','Father'=>'Father','Mother'=>'Mother','Son'=>'Son','Daughter'=>'Daughter','Cousin'=>'Cousin','Grand Father'=>'Grand Father','Grand Mother'=>'Grand Mother','Auncle'=>'Auncle','Aunty'=>'Aunty','Wife'=>'Wife','Husband'=>'Husband','Friend'=>'Friend'],null,['class'=>'form-control','placeholder'=>'Enter Mobile Number']) !!}
+                     {!! Form::select('next_of_kin_2_relationship',[''=>'Choose Relationship','Father'=>'Father','Mother'=>'Mother','Son'=>'Son','Daughter'=>'Daughter','Cousin'=>'Cousin','Grand Father'=>'Grand Father','Grand Mother'=>'Grand Mother','Uncle'=>'Uncle','Aunt'=>'Aunt','Wife'=>'Wife','Husband'=>'Husband','Friend'=>'Friend','Brother'=>'Brother','Sister'=>'Sister'],null,['class'=>'form-control','placeholder'=>'Enter Mobile Number']) !!}
                   </div>
                </div>
             </div>

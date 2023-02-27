@@ -144,4 +144,24 @@
    input.addEventListener('keyup', reset);
 
 </script>
-
+<script>
+   function toggleBlur() {
+      var div = document.getElementById("Blur");
+      if (div.classList.contains("blurred")) {
+         div.classList.remove("blurred");
+      } else {
+         div.classList.add("blurred");
+      }
+   }
+</script>
+<script>
+   function toggleBlur2() {
+      var div = document.getElementById("Blur2");
+      if (div.classList.contains("blurred")) {
+         div.classList.remove("blurred");
+      } else {
+         div.classList.add("blurred");
+      }
+   }
+</script>
+@yield('scripts')

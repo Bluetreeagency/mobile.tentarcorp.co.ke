@@ -11,13 +11,13 @@
             </li>
             <li class="splide__slide p-2">
                <img src="{!! asset('assets/img/sample/photo/vector2.png') !!}" alt="alt" class="imaged w-100 square mb-4">
-               <h2 class="mt-5">Grow your loan limit up to ksh 30,000</h2>
+               <h2 class="mt-5">Grow your loan limit up to ksh 500,000</h2>
                <p>Borrow, and repay on time and watch your loan limit grow</p>
             </li>
             <li class="splide__slide p-2">
                <img src="{!! asset('assets/img/sample/photo/vector3.png') !!}" alt="alt" class="imaged w-100 square mb-4">
                <h2 class="mb-2">Secure & Trusted</h2>
-               <p>Your data is always secure with Tentarcore. Apply with confidence</p>
+               <p>Your data is always secure with Tentacorp. Apply with confidence</p>
             </li>
          </ul>
       </div>

@@ -7,7 +7,7 @@
                <select class="form-control custom-select" id="select4" wire:model="loan_type" required>
                   <option value="3">Choose loan type</option>
                   <option value="Dharura">Dharura Loan</option>
-                  <option value="Miradi">Miradi Loan</option>
+                  <option value="Mradi">Mradi Loan</option>
                </select>
             </div>
             @error('loan_type')<span class="error text-danger">{{$message}}</span>@enderror
@@ -15,23 +15,21 @@
          <div class="form-group basic">
             <div class="input-wrapper">
                <label class="label">Amount</label>
-               <input type="number" class="form-control" wire:model="amount" id="phone4" placeholder="Enter amount" required>
+               <input type="number" class="form-control" wire:model="amount" id="phone4" placeholder="Enter amount" min="5" max="10" required>
             </div>
             @error('amount')<span class="error text-danger">{{$message}}</span>@enderror
          </div>
-         @php
-            if($loan_type == 'Dharura'){
-               $paymentPeriod = 1;
-            }elseif($loan_type == 'Miradi'){
-               $paymentPeriod = 3;
-            }else{
-               $paymentPeriod = 0;
-            }
-         @endphp
          <div class="form-group basic">
             <div class="input-wrapper">
                <label class="label">Payment period in months</label>
-               <input type="number" value="{{ $paymentPeriod }}" class="form-control" id="phone4" placeholder="Enter mounth" readonly>
+               <select wire:model="payment_period" class="form-control" required>
+                  <option value="">choose payment period</option>
+                  <option value="1">1</option>
+                  @if($loan_type == 'Mradi')
+                     <option value="2">2</option>
+                     <option value="3">3</option>
+                  @endif
+               </select>
             </div>
             @error('payment_period')<span class="error text-danger">{{$message}}</span>@enderror
          </div>
@@ -46,7 +44,16 @@
    </div>
 
    @php
-      $intrest = $amount * 0.125 * $paymentPeriod;
+      if($amount){
+         if($amount >= 5000){
+            $intrest = 0;
+         }else {
+            $intrest = $amount * 0.125 * $payment_period;
+         }
+      }else{
+         $intrest = 0;
+      }
+
    @endphp
    <div class="goals mt-3">
       <!-- item -->
@@ -63,7 +70,7 @@
             <div>
                <h4>Repayment Period</h4>
             </div>
-            <div class="price">Monthly</div>
+            <div class="price">{{ $payment_period }} Monthly</div>
          </div>
       </div>
       <div class="item">
@@ -79,7 +86,7 @@
             <div>
                <h4>Amount To Pay</h4>
             </div>
-            <div class="price">ksh {!! number_format($intrest + $amount)!!}</div>
+            <div class="price">ksh @if($amount){!! number_format($intrest + $amount) !!}@else 0 @endif</div>
          </div>
       </div>
    </div>

@@ -3,7 +3,7 @@
    @include('partials._head')
    <body>
       <!-- loader -->
-      {{-- <div id="loader">
+      {{-- <div id="">
          <img src="assets/img/loading-icon.png" alt="icon" class="loading-icon">
       </div> --}}
       <!-- * loader -->
@@ -17,7 +17,9 @@
          @yield('content')
       </div>
       <!-- * App Capsule -->
-
+      @auth
+      @include('partials._side_nav')
+      @endauth
       @auth
          <!-- App Bottom Menu -->
          @include('partials._footer_nav')

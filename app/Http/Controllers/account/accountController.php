@@ -34,8 +34,12 @@ class accountController extends Controller
          return view('account.otp');
       }
       $loans = Loans::where('user_code',Auth::user()->user_code)->limit(4)->get();
-      $balance = Loans::where('user_code',Auth::user()->user_code)->sum('balance');
-
+      $balanceQuery = Loans::where('user_code',Auth::user()->user_code)->where('loan_status','Approved');
+      if($balanceQuery->count() > 0){
+         $balance = $balanceQuery->sum('balance');
+      }else{
+         $balance = 0;
+      }
       return view('account.dashboard', compact('loans','balance'));
    }
 
@@ -116,6 +120,26 @@ class accountController extends Controller
       ]);
 
       $profile                              = Auth::user();
+      // profile_picture
+      if(!empty($request->profile_picture)){
+			$path = base_path().'/public/account/'.Auth::user()->user_code.'/documents/';
+
+			if (!file_exists($path)) {
+            mkdir($path, 0777,true);
+         }
+
+			$file = $request->file('profile_picture');
+
+         // GET THE FILE EXTENSION
+         $extension = $file->getClientOriginalExtension();
+         // RENAME THE UPLOAD WITH RANDOM NUMBER
+         $fileName = Helper::generateRandomString(). '.' . $extension;
+
+         // MOVE THE UPLOADED FILES TO THE DESTINATION DIRECTORY
+         $file->move($path, $fileName);
+
+         $profile->avatar = $fileName;
+      }
       $profile->dob                         = $request->dob;
       $profile->gender                      = $request->gender;
       $profile->alternative_number          = $request->alternative_number;

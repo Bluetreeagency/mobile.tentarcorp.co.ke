@@ -18,10 +18,10 @@
 @endsection
 @section('content')
    <div class="section mt-2 text-center">
-      <h1>Register now</h1>
-      <h4>Create an account</h4>
+      <center><img src="{!! asset('assets/img/lg-logo.png') !!}" alt="" style="width:40%"></center>
+      <h2 class="mt-2">Register now</h2>
    </div>
-   <div class="section mb-5 p-2">
+   <div class="section mb-3 p-2">
       @include('partials._messages')
       <form action="{{ route('save.signup') }}" method="post">
          @csrf
@@ -104,9 +104,7 @@
                </div>
             </div>
          </div>
-         <div class="form-button-group transparent">
-            <button type="submit" class="btn btn-primary btn-block btn-lg">Register</button>
-         </div>
+         <button type="submit" class="btn btn-primary btn-block mt-3">Register</button>
       </form>
    </div>
    <!-- Terms Modal -->

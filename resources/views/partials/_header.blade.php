@@ -1,7 +1,12 @@
 <div class="appHeader">
-   <div class="left">
+   {{-- <div class="left">
       <a href="{{ url()->previous() }}" class="headerButton">
          <ion-icon name="chevron-back-outline"></ion-icon>
+      </a>
+   </div> --}}
+   <div class="left">
+      <a href="#" class="headerButton" data-bs-toggle="modal" data-bs-target="#sidebarPanel">
+          <ion-icon name="menu-outline"></ion-icon>
       </a>
    </div>
    <div class="pageTitle">@yield('title')</div>
