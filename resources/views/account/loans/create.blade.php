@@ -4,7 +4,7 @@
    @include('partials._header')
 @endsection
 @section('content')
-   <div class="section mt-2 mb-2">
+   <div class="section mt-2 mb-5">
       <h2 class="title text-center mt-5 mb-3">Loan Application</h2>
       @include('partials._messages')
       @livewire('loans.create')

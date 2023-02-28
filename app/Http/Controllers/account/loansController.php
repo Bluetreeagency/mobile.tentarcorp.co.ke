@@ -24,7 +24,7 @@ class loansController extends Controller
 
    //index
    public function index(){
-      $loans = Loans::where('user_code',Auth::user()->user_code)->get();
+      $loans = Loans::where('user_code',Auth::user()->user_code)->orderby('id','desc')->get();
 
       return view('account.loans.index', compact('loans'));
    }

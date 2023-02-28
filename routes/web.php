@@ -14,6 +14,12 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [App\Http\Controllers\pagesController::class, 'home'])->name('home.page');
+Route::post('forgot/page', [App\Http\Controllers\pagesController::class, 'sendOTP'])->name('password.forgot.page');
+Route::get('verify/otp', [App\Http\Controllers\pagesController::class, 'password_otp'])->name('password.otp');
+Route::post('otp/check', [App\Http\Controllers\pagesController::class, 'verify_OTP'])->name('verify.opt');
+Route::get('reset/password/{code}', [App\Http\Controllers\pagesController::class, 'password_reset'])->name('password.reset.page');
+Route::post('reset/new/password', [App\Http\Controllers\pagesController::class, 'reset_new_password'])->name('reset.new.password');
+
 Auth::routes();
 Route::get('logout', [App\Http\Controllers\Auth\LoginController::class, 'logout']);
 Route::post('signup/account', [App\Http\Controllers\Auth\RegisterController::class, 'signup'])->name('save.signup');

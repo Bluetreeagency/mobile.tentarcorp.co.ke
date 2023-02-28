@@ -165,3 +165,16 @@
    }
 </script>
 @yield('scripts')
+<script type="text/javascript">
+   $(document).ready(function(){
+      $("form").on("submit", function(){
+         $(".submit").hide();
+         $(".submit-load").show();
+      });//submit
+   });//document ready
+</script>
+<script>
+    $(".delete").on("click", function(){
+        return confirm("Are you sure?");
+    });
+</script>

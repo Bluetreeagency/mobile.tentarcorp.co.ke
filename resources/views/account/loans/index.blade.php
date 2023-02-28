@@ -5,7 +5,7 @@
 @endsection
 @section('content')
 <!-- Transactions -->
-<div class="section mt-2">
+<div class="section mt-5">
    <div class="transactions">
 
       <!-- item -->

@@ -4,7 +4,7 @@
    @include('partials._header')
 @endsection
 @section('content')
-   <div class="section mt-2 mb-2">
+   <div class="section mt-2 mb-5">
       <h2 class="title text-center mt-5 mb-3">Your Account Details</h2>
       <div class="card mb-3">
          <div class="card-body">
@@ -75,7 +75,10 @@
                </div>
             </div>
          </div>
-         <button type="submit" class="btn btn-sm btn-block btn-primary mt-3 mb-4">Update Documents</button>
+
+         <button type="submit" class="btn btn-sm btn-block btn-primary mt-3 mb-4 submit">Update Documents</button>
+         <center><img src="{!! asset('assets/img/btn-loader.gif') !!}" class="img-responsive submit-load none mt-3" alt="loader" style="width:30%"></center>
+
       {!! Form::close() !!}
    </div>
 @endsection

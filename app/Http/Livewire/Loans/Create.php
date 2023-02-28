@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire\Loans;
 
+use App\Models\loan_settings;
 use App\Models\Loans;
 use Livewire\Component;
 use Carbon\Carbon;
@@ -13,7 +14,9 @@ class Create extends Component
    public $loan_type,$amount,$loan_reason,$payment_period;
    public function render()
    {
-      return view('livewire.loans.create');
+      $loanSettings = loan_settings::where('status','Active')->get();
+
+      return view('livewire.loans.create', compact('loanSettings'));
    }
 
 
@@ -32,20 +35,36 @@ class Create extends Component
          'payment_period' => 'required'
       ]);
 
-      if($this->loan_type == 'Dharura'){
-         $this->validate([
-            'amount' => 'required|numeric|min:5000|max:30000'
-         ]);
+      if(Auth::user()->loan_limit_dharura) {
+         if($this->loan_type == 'Dharura'){
+            $this->validate([
+               'amount' => 'required|numeric|min:5000|max:'.Auth::user()->loan_limit_dharura
+            ]);
+         }
+
+         if($this->loan_type == 'Mradi'){
+            $this->validate([
+               'amount' => 'required|numeric|min:30000|max:100000'
+            ]);
+         }
+      }else{
+         if($this->loan_type == 'Dharura'){
+            $this->validate([
+               'amount' => 'required|numeric|min:5000|max:30000'
+            ]);
+         }
+
+         if($this->loan_type == 'Mradi'){
+            $this->validate([
+               'amount' => 'required|numeric|min:30000|max:100000'
+            ]);
+         }
       }
 
-      if($this->loan_type == 'Mradi'){
-         $this->validate([
-            'amount' => 'required|numeric|min:30000|max:100000'
-         ]);
-      }
+      $loanInfo = loan_settings::where('code',$this->loan_type)->first();
 
       $amount = $this->amount;
-      $rate = 0.125;
+      $rate = $loanInfo->interest_rate;
       $interestAmount = $amount * $rate * $this->payment_period;
       $totalAmount = $interestAmount + $amount;
 
@@ -60,7 +79,7 @@ class Create extends Component
       $loan->repayment_period = $this->payment_period;
       $loan->reason           = $this->loan_reason;
       $loan->application_date = Carbon::now();
-      $loan->interest_rate    = 12.5;
+      $loan->interest_rate    = $loanInfo->interest_rate;
       $loan->save();
 
       // Set Flash Message

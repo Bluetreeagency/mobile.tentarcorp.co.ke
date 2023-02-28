@@ -1,6 +1,8 @@
 <?php
 
 namespace App\Helpers;
+
+use App\Models\loan_settings;
 use App\Models\Loans;
 use Auth;
 class Loan
@@ -15,6 +17,12 @@ class Loan
       }
 
       return $balance;
+   }
+
+   //Loan Settings
+   public static function loan_settings($code){
+      $loanSettings = loan_settings::where('code',$code)->first();
+      return $loanSettings;
    }
 
 }

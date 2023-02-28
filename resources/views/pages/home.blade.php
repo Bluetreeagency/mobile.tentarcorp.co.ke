@@ -6,7 +6,7 @@
          <ul class="splide__list">
             <li class="splide__slide p-2">
                <img src="{!! asset('assets/img/sample/photo/vector1.png') !!}" alt="alt" class="imaged w-100 square mb-4">
-               <h2 class="mt-5">Jichagulie due date between 1 and 61 days</h2>
+               <h2 class="mt-5">Jichagulie due date between 1 and 90 days</h2>
                <p>Pay earlier than your selected repayment date and pay less, or pay later if you need more time.</p>
             </li>
             <li class="splide__slide p-2">
