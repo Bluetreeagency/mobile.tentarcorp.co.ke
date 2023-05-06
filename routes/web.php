@@ -21,6 +21,7 @@ Route::get('reset/password/{code}', [App\Http\Controllers\pagesController::class
 Route::post('reset/new/password', [App\Http\Controllers\pagesController::class, 'reset_new_password'])->name('reset.new.password');
 
 Auth::routes();
+Route::get('login', [App\Http\Controllers\Auth\LoginController::class, 'showLoginForm'])->name('login');
 Route::get('logout', [App\Http\Controllers\Auth\LoginController::class, 'logout']);
 Route::post('signup/account', [App\Http\Controllers\Auth\RegisterController::class, 'signup'])->name('save.signup');
 

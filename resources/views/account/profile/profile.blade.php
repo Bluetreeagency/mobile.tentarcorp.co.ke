@@ -81,7 +81,11 @@
                </div>
                <div class="form-group basic">
                   <div class="input-wrapper">
-                     <label class="label text-primary">SVC Number</label>
+                     @if(Auth::user()->membership_type == 'Civilian')
+                        <label class="label text-primary">Staff number</label>
+                     @else
+                        <label class="label text-primary">SVC Number</label>
+                     @endif
                      {!! Form::text('svc_number',null,['class'=>'form-control','required'=>'','placeholder'=>'Enter SVC Number']) !!}
                   </div>
                </div>
@@ -100,7 +104,11 @@
                <div class="form-group basic">
                   <div class="input-wrapper">
                      <label class="label text-primary">Work Station</label>
-                     {!! Form::select('work_station',[''=>'Choose Station','D.O.D'=>'D.O.D','Embakasi'=>'Embakasi','Langata'=>'Langata','Kahawa'=>'Kahawa','Moi Air Base'=>'Moi Air Base'],null,['class'=>'form-control custom-select','required'=>'']) !!}
+                     @if(Auth::user()->membership_type == 'Civilian')
+                        {!! Form::select('work_station',[''=>'Choose Station','Company X'=>'Company X'],null,['class'=>'form-control custom-select']) !!}
+                     @else
+                        {!! Form::select('work_station',$workstations,null,['class'=>'form-control custom-select']) !!}
+                     @endif
                   </div>
                </div>
             </div>

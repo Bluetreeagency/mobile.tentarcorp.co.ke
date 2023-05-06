@@ -133,6 +133,9 @@
                      @else
                         <span class="badge badge-primary">Awaiting Approval</span>
                      @endif
+                     @if($loan->balance == 0)
+                        <span class="badge badge-warning">Paid</span>
+                     @endif
                   </div>
                </div>
             </a>
@@ -165,7 +168,8 @@
                            <input type="number" name="amount_paid" class="form-control" placeholder="Enter Amount" max="{!! Loan::userLoanBalance() !!}" required>
                         </div>
                         <center>
-                           <button class="btn btn-sm btn-block btn-primary mt-3 mb-4" type="submit"> Make Payment</button>
+                           <button class="btn btn-sm btn-block btn-primary mt-3 mb-4 submit" type="submit"> Make Payment</button>
+                           <center><img src="{!! asset('assets/img/btn-loader.gif') !!}" class="submit-load none mt-3" alt="" width="40%"></center>
                         </center>
                      </form>
                   </div>

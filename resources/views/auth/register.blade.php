@@ -29,7 +29,7 @@
             <div class="card-body">
                <div class="form-group basic">
                   <div class="input-wrapper">
-                     <label class="label" for="">Your First Name</label>
+                     <label class="label text-primary" for="">Your First Name</label>
                      <input type="text" name="first_name" class="form-control" placeholder="Enter Your First Name" required>
                   </div>
                   @error('first_name')
@@ -40,7 +40,18 @@
                </div>
                <div class="form-group basic">
                   <div class="input-wrapper">
-                     <label class="label" for="">Your Last Name</label>
+                     <label class="label text-primary" for="">Your Middle Name</label>
+                     <input type="text" name="middle_name" class="form-control" placeholder="Enter Your Middle Name">
+                  </div>
+                  @error('first_name')
+                     <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                     </span>
+                  @enderror
+               </div>
+               <div class="form-group basic">
+                  <div class="input-wrapper">
+                     <label class="label text-primary" for="">Your Last Name</label>
                      <input type="text" name="last_name" class="form-control" placeholder="Enter your Last name"  autocomplete="off" required>
                   </div>
                   @error('last_name')
@@ -51,13 +62,13 @@
                </div>
                <div class="form-group basic">
                   <div class="input-wrapper">
-                     <label class="label" for="">ID Number</label>
+                     <label class="label text-primary" for="">ID Number</label>
                      <input type="number" name="id_number" class="form-control" placeholder="Enter your ID Number"  autocomplete="off" required>
                   </div>
                </div>
                <div class="form-group basic">
                   <div class="input-wrapper">
-                     <label class="label" for="">Membership Type</label>
+                     <label class="label text-primary" for="">Membership Type</label>
                      <select name="membership_type" class="form-control" required>
                         <option value="">Choose Membership </option>
                         <option value="Civil Servant">Civil Servant</option>
@@ -68,7 +79,7 @@
                </div>
                <div class="form-group basic">
                   <div class="input-wrapper">
-                     <label class="label" for="">Your Phone Number</label>
+                     <label class="label text-primary" for="">Your Phone Number</label>
                      <input type="number" name="phone_number" class="form-control" placeholder="Enter your phone number" autocomplete="off" required>
                   </div>
                   @error('phone_number')
@@ -79,7 +90,7 @@
                </div>
                <div class="form-group basic">
                   <div class="input-wrapper">
-                     <label class="label" for="password1">Password</label>
+                     <label class="label text-primary" for="password1">Password</label>
                      <input type="password" name="password" class="form-control" autocomplete="off" placeholder="Your password" autocomplete="off" required>
                   </div>
                   @error('password')
@@ -90,7 +101,7 @@
                </div>
                <div class="form-group basic">
                   <div class="input-wrapper">
-                     <label class="label" for="password2">{{ __('Confirm Password') }}</label>
+                     <label class="label text-primary" for="password2">{{ __('Confirm Password') }}</label>
                      <input type="password" class="form-control @error('password') is-invalid @enderror" name="password_confirmation" autocomplete="off" placeholder="Type password again" required>
                   </div>
                </div>
@@ -116,28 +127,29 @@
                   <a href="#" data-bs-dismiss="modal">Close</a>
             </div>
             <div class="modal-body">
-                  <p>
-                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc fermentum, urna eget finibus
-                     fermentum, velit metus maximus erat, nec sodales elit justo vitae sapien. Sed fermentum
-                     varius erat, et dictum lorem. Cras pulvinar vestibulum purus sed hendrerit. Praesent et
-                     auctor dolor. Ut sed ultrices justo. Fusce tortor erat, scelerisque sit amet diam rhoncus,
-                     cursus dictum lorem. Ut vitae arcu egestas, congue nulla at, gravida purus.
-                  </p>
-                  <p>
-                     Donec in justo urna. Fusce pretium quam sed viverra blandit. Vivamus a facilisis lectus.
-                     Nunc non aliquet nulla. Aenean arcu metus, dictum tincidunt lacinia quis, efficitur vitae
-                     dui. Integer id nisi sit amet leo rutrum placerat in ac tortor. Duis sed fermentum mi, ut
-                     vulputate ligula.
-                  </p>
-                  <p>
-                     Vivamus eget sodales elit, cursus scelerisque leo. Suspendisse lorem leo, sollicitudin
-                     egestas interdum sit amet, sollicitudin tristique ex. Class aptent taciti sociosqu ad litora
-                     torquent per conubia nostra, per inceptos himenaeos. Phasellus id ultricies eros. Praesent
-                     vulputate interdum dapibus. Duis varius faucibus metus, eget sagittis purus consectetur in.
-                     Praesent fringilla tristique sapien, et maximus tellus dapibus a. Quisque nec magna dapibus
-                     sapien iaculis consectetur. Fusce in vehicula arcu. Aliquam erat volutpat. Class aptent
-                     taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
-                  </p>
+               <ol>
+                  <li><b>Loan eligibility:</b> Tentacorp reserves the right to approve or reject any loan application based on its internal criteria. The applicant must meet all the eligibility criteria set by Tentacorp.</li>
+                  <li><b>Loan amount:</b> The loan amount will be determined by Tentacorp and is subject to change at any time.</li>
+
+                  <li><b>Interest rates:</b> The interest rates for the loan will be determined by Tentacorp and will be communicated to the applicant at the time of application. Interest rates may be subject to change at any time.</li>
+
+                  <li><b>Repayment terms:</b> The repayment terms of the loan will be determined by Tentacorp and will be communicated to the applicant at the time of application. The applicant must adhere to the repayment terms and make payments on time.</li>
+
+                  <li><b>Late payment fees:</b> Tentacorp reserves the right to charge late payment fees in the event of a late payment. The late payment fee will be communicated to the applicant at the time of application.</li>
+
+                  <li><b>Prepayment penalties:</b> Tentacorp reserves the right to charge prepayment penalties in the event of an early repayment of the loan. The prepayment penalty will be communicated to the applicant at the time of application.</li>
+
+                  <li><b>Collateral:</b> Tentacorp may require the applicant to provide collateral as a security for the loan. The type of collateral required will be determined by Tentacorp and will be communicated to the applicant at the time of application.</li>
+
+                  <li><b>Loan approval:</b> Tentacorp will notify the applicant of the loan approval status within a reasonable amount of time after receiving the loan application. Tentacorp reserves the right to reject any loan application without providing a reason.</li>
+
+                  <li><b>Governing law:</b> The loan application and all related transactions will be governed by the laws of the jurisdiction in which Tentacorp operates.</li>
+
+                  <li><b>Dispute resolution:</b> Any disputes arising from the loan application or related transactions will be resolved through arbitration in accordance with the rules of the jurisdiction in which Tentacorp operates.</li>
+
+                  <li><b>Changes to terms and conditions:</b> Tentacorp reserves the right to change these terms and conditions at any time without prior notice to the applicant. The most current version of the terms and conditions will be available on Tentacorp's website.</li>
+               </ol>
+
             </div>
          </div>
       </div>

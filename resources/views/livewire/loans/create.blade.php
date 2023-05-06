@@ -20,7 +20,7 @@
                   @if(Auth::user()->loan_limit_dharura)
                      @if($loan_type == 'Dharura')
                         <input type="number" class="form-control" wire:model="amount" id="phone4" placeholder="Enter amount" min="5000" max="{!! Auth::user()->loan_limit_dharura !!}" required>
-                     @endif
+                     @else
                         <input type="number" class="form-control" wire:model="amount" id="phone4" placeholder="Enter amount" min="30000" max="{!! Auth::user()->loan_limit_mradi !!}" required>
                      @endif
                   @else
@@ -106,7 +106,7 @@
 
       <button class="btn btn-block btn-success mt-3" wire:click="store()">Submit Application</button>
       <div wire:loading wire:target="store">
-         <center><img src="{!! asset('assets/img/btn-loader.gif') !!}" class="img-responsive" alt="loader" style="width:30%"></center>
+         <center><img src="{!! asset('assets/img/btn-loader.gif') !!}" class="img-responsive mt-3" alt="loader" style="width:50%"></center>
       </div>
    @endif
 </div>

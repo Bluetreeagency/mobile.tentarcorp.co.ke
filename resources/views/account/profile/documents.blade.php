@@ -30,11 +30,17 @@
                <div class="form-group">
                   <label for="">Upload ID Front Image</label>
                   <input type="file" name="id_front_image" id="">
+                  @if($documents->id_front_image)
+                     <a href="{!! asset('account/'.Auth::user()->user_code.'/documents/'.$documents->id_front_image) !!}" target="_blank" class="text-warning text-center"><i>View Document</i></a>
+                  @endif
                </div>
                <hr>
                <div class="form-group">
                   <label for="">Upload ID Back Image</label>
                   <input type="file" name="id_back_image" id="">
+                  @if($documents->id_back_image)
+                     <a href="{!! asset('account/'.Auth::user()->user_code.'/documents/'.$documents->id_back_image) !!}" target="_blank" class="text-warning text-center"><i>View Document</i></a>
+                  @endif
                </div>
             </div>
          </div>
@@ -44,25 +50,49 @@
                <div class="form-group">
                   <label for="">Payslip 1</label>
                   <input type="file" name="payslip_1" id="">
+                  @if($documents->payslip_1)
+                     <a href="{!! asset('account/'.Auth::user()->user_code.'/documents/'.$documents->payslip_1) !!}" target="_blank" class="text-warning text-center"><i>View Document</i></a>
+                  @endif
                </div>
                <hr>
                <div class="form-group">
                   <label for="">Payslip 2</label>
                   <input type="file" name="payslip_2" id="">
+                  @if($documents->payslip_2)
+                     <a href="{!! asset('account/'.Auth::user()->user_code.'/documents/'.$documents->payslip_2) !!}" target="_blank" class="text-warning text-center"><i>View Document</i></a>
+                  @endif
                </div>
                <hr>
                <div class="form-group">
                   <label for="">Payslip 3</label>
                   <input type="file" name="payslip_3" id="">
+                  @if($documents->payslip_3)
+                     <a href="{!! asset('account/'.Auth::user()->user_code.'/documents/'.$documents->payslip_3) !!}" target="_blank" class="text-warning text-center"><i>View Document</i></a>
+                  @endif
                </div>
             </div>
          </div>
          <div class="card mb-3">
-            <div class="card-header">Service Card Copy</div>
+            <div class="card-header">
+               @if(Auth::user()->membership_type == 'Civilian')
+                  Staff Card Copy
+               @else
+                  Service Card Copy
+               @endif
+            </div>
             <div class="card-body">
                <div class="form-group">
-                  <label for="">Service Card Image</label>
+                  <label for="">
+                     @if(Auth::user()->membership_type == 'Civilian')
+                        Staff Card Copy
+                     @else
+                        Service Card Copy
+                     @endif
+                  </label>
                   <input type="file" name="service_card" id="">
+                  @if($documents->service_card)
+                     <a href="{!! asset('account/'.Auth::user()->user_code.'/documents/'.$documents->service_card) !!}" target="_blank" class="text-warning text-center"><i>View Document</i></a>
+                  @endif
                </div>
             </div>
          </div>
@@ -72,6 +102,9 @@
                <div class="form-group">
                   <label for="">KRA Pin</label>
                   <input type="file" name="kra_pin" id="">
+                  @if($documents->kra_pin)
+                     <a href="{!! asset('account/'.Auth::user()->user_code.'/documents/'.$documents->kra_pin) !!}" target="_blank" class="text-warning text-center"><i>View Document</i></a>
+                  @endif
                </div>
             </div>
          </div>

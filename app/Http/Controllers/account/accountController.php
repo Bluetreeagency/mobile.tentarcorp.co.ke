@@ -107,8 +107,9 @@ class accountController extends Controller
    //profile
    public function profile(){
       $profile = Auth::user();
+      $workstations = Work_station::pluck('work_station','work_station')->prepend('Select Work Station','');
 
-      return view('account.profile.profile', compact('profile'));
+      return view('account.profile.profile', compact('profile','workstations'));
    }
 
    //update profile

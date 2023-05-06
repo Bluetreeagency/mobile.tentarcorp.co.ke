@@ -1119,7 +1119,6 @@ body.animationGoBack:after {
 .badge {
    font-size: 12px;
    line-height: 1em;
-   border-radius: 100px;
    letter-spacing: 0;
    height: 22px;
    min-width: 22px;

@@ -14,3 +14,7 @@
 .none {
    display: none;
 }
+
+.font-small {
+   font-size: small;
+}
